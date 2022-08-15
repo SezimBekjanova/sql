@@ -5,6 +5,7 @@ import kg.megacom.sql.models.Printer;
 import kg.megacom.sql.models.Product;
 import kg.megacom.sql.models.pojo.Task1;
 import kg.megacom.sql.models.pojo.Task1View;
+import kg.megacom.sql.models.pojo.Task5View;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -21,4 +22,7 @@ public interface PCRepository extends JpaRepository<PC, Integer> {
     //1.3
    @Query(value = "select model, speed, hd from pc  where price < :price", nativeQuery = true)
     List<Task1View> findTask1ByPriceNative(double price);
+   //5.3
+    @Query(value =  "Select model, speed, hd from PC where cd in('12x','24x') and price<600", nativeQuery = true)
+    List<Task5View> findTask5ByPriceNative(double price);
 }

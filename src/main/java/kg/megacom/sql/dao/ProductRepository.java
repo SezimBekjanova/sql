@@ -1,10 +1,7 @@
 package kg.megacom.sql.dao;
 
 import kg.megacom.sql.models.Product;
-import kg.megacom.sql.models.pojo.Task1;
-import kg.megacom.sql.models.pojo.Task1View;
-import kg.megacom.sql.models.pojo.Task2;
-import kg.megacom.sql.models.pojo.Task2View;
+import kg.megacom.sql.models.pojo.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
