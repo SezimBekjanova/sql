@@ -22,7 +22,7 @@ public class Laptop {
     @Column(nullable = false)
     double hd;
     @Column(nullable = true)
-    long price;
+    double price;
     @ManyToOne
         @JoinColumn(name = "model")
     Product product;

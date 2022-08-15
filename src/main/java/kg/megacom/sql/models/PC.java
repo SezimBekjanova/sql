@@ -14,8 +14,8 @@ public class PC {
     @Id
     Integer code;
     int speed;
+    double hd;
     int ram;
-    String hd;
     @Column(length = 10)
     String cd;
     double price;
