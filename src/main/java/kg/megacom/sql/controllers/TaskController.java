@@ -2,10 +2,9 @@ package kg.megacom.sql.controllers;
 
 import kg.megacom.sql.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/task")
@@ -33,10 +32,36 @@ public class TaskController {
     @Autowired
     private Task5Service task5Service;
     @GetMapping("/5")
-    public Object task5(@RequestParam double price){return task5Service.task5(price);}
+    public Object task5(@RequestParam List<String>cds, @RequestParam double price){return task5Service.task5(cds,price);}
     @Autowired
     private Task6Service task6Service;
     @GetMapping("/6")
     public Object task6(@RequestParam double hd){return task6Service.task6(hd);}
+    @Autowired
+    private Task8Service task8Service;
+    @GetMapping("/8")
+    public Object task8(@RequestParam String type1){return task8Service.task8(type1);}
+    @Autowired
+    private Task9Service task9Service;
+    @GetMapping("/9")
+    public  Object task9(@RequestParam int speed){return task9Service.task9(speed);}
+    @Autowired
+    private Task10Service task10Service;
+    @GetMapping("/10")
+    public  Object task10(){
+        return task10Service.task10();
+    }
+    @Autowired
+    private Task11Service task11Service;
+    @GetMapping("/11")
+    public  Object task11(){
+        return task11Service.task11();
+    }
+    @Autowired
+    private PrinterTaskService printerTaskService;
+    @GetMapping("/12")
+    public  Object PrinterTask(){
+        return printerTaskService.printerTask();
+    }
 }
 

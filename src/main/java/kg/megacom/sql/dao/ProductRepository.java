@@ -16,4 +16,21 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     //2.3
     @Query(value = "select maker from Product  where type =:type", nativeQuery = true)
     List<Task2View> findTask2ByTypeNative(String type);
+//8.1
+    List<Product> findAllByType(String type1);
+    List<Product> removeDistinctByType(String type2);
+
+
+    //8.2
+    //@Query("SELECT DISTINCT maker FROM product WHERE type like upper(?1) and maker not in SELECT maker FROM product Where type = ?2 ")
+    //List<Task8> findTask8ByType(String type1, String tape1);
+    //8.3
+    @Query(value ="SELECT DISTINCT maker\n" +
+            "FROM product\n" +
+            "WHERE type = ?1\n" +
+            "EXCEPT\n" +
+            "SELECT DISTINCT product.maker\n" +
+            "FROM product\n" +
+            "Where type = ?2 ",nativeQuery = true )
+    List<Task8View> findTask8DistinctByType(String type1, String type2);
 }

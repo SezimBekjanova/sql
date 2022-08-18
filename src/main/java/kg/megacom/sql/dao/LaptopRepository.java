@@ -22,6 +22,14 @@ public interface LaptopRepository extends JpaRepository<Laptop, Integer> {
     @Query(value = "select model,ram,screen from Laptop  where price > :price", nativeQuery = true)
     List<Task3View> findTask3ByPriceNative(double price);
 
+//6.1
+    List<Laptop> findAllByHdGreaterThanEqual(double hd);
+
+    /*
+    //5.2
+    @Query("select new kg.megacom.sql.models.pojo.Task5(pc.product.model, pc.speed, pc.hd)  from PC pc where pc.cd in(:cds) and pc.price<:price")
+    List<Task5View> findTask5ByPrice(List<String>cds,double price);
+ */
     //6.3
     @Query(value = " Select distinct maker, speed from\n" +
             "product pr join laptop l on pr.model=l.model\n" +

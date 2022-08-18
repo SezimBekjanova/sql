@@ -10,7 +10,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Task6 {
-    String maker;
-    int speed;
+public class Task10 {
+    String model;
+    double price;
+
 }

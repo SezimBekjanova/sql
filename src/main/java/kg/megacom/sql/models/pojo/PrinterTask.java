@@ -10,7 +10,10 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Task6 {
-    String maker;
-    int speed;
+public class PrinterTask {
+    Integer code;
+    char color;
+    String type;
+    double price;
+    String model;
 }
